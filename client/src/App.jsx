@@ -6,6 +6,7 @@ import Onboard from "./home/Home";
 import BasicsInstitution from "./home/About";
 import Courses from "./home/Courses";
 import Ranking from "./home/Ranking";
+import Facilities from "./home/Facilities";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -16,6 +17,7 @@ function App() {
       <BasicsInstitution />
       <Courses />
       <Ranking />
+      <Facilities />
       <Footer />
     </div>
   );

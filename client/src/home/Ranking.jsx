@@ -54,7 +54,7 @@ const Ranking = () => {
     },
     {
       id: 2,
-      logo: "https://www.ugc.ac.in/oldpdf/ugc_logo.jpg",
+      logo: "https://upload.wikimedia.org/wikipedia/en/4/4e/UGC_India_Logo.png",
       title: "UGC Recognition",
       description: "University Grants Commission",
       grade: "Approved",
@@ -70,7 +70,7 @@ const Ranking = () => {
     },
     {
       id: 4,
-      logo: "https://aicte-india.org/sites/default/files/logo_new.png",
+      logo: "https://www.gvsu.edu/cms4/asset/83FCF959-CAC9-6F16-437BAC0D302BE992/eac-rgb-w-l[1464096725].jpg",
       title: "ABET Accreditation",
       description: "Engineering Accreditation Commission",
       grade: "Accredited",
@@ -86,7 +86,7 @@ const Ranking = () => {
     },
     {
       id: 6,
-      logo: "https://icar.org.in/sites/default/files/inline-images/logo.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Logo_of_the_Indian_Council_of_Agricultural_Research.svg/962px-Logo_of_the_Indian_Council_of_Agricultural_Research.svg.png",
       title: "ICAR Recognition",
       description: "Indian Council of Agricultural Research",
       grade: "Recognized",
@@ -96,7 +96,7 @@ const Ranking = () => {
 
   return (
     <section className="bg-gray-50 py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Hero Section */}
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-sm mb-6 border">
@@ -105,10 +105,10 @@ const Ranking = () => {
               EXCELLENCE RECOGNIZED
             </span>
           </div>
-          <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 leading-tight">
             Rankings & Accreditations
           </h1>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Consistently ranked among India's top institutions for academic
             excellence, innovation, and quality education
           </p>
@@ -117,50 +117,50 @@ const Ranking = () => {
         {/* NIRF Rankings Card */}
         <div className="bg-white rounded-3xl shadow-lg overflow-hidden mb-16 border">
           {/* Header */}
-          <div className="px-8 py-8">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div className="flex items-center gap-4">
+          <div className="px-4 sm:px-8 py-8">
+            <div className="flex flex-col gap-6 xl:flex-row xl:items-center xl:justify-between xl:gap-8">
+              <div className="flex flex-col sm:flex-row items-center gap-4">
                 <div
-                  className="w-20 h-20 rounded-2xl border-2 flex items-center justify-center"
+                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl border-2 flex items-center justify-center flex-shrink-0"
                   style={{ borderColor: "var(--color-brand-blue)" }}
                 >
                   <span
-                    className="text-2xl font-bold"
+                    className="text-lg sm:text-2xl font-bold"
                     style={{ color: "var(--color-brand-blue)" }}
                   >
                     NIRF
                   </span>
                 </div>
-                <div className="text-center md:text-left">
-                  <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-1">
+                <div className="text-center sm:text-left">
+                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1">
                     NIRF Rankings 2024
                   </h2>
-                  <p className="text-gray-600">
+                  <p className="text-sm sm:text-base text-gray-600">
                     Ministry of Education, Government of India
                   </p>
                 </div>
               </div>
 
               {/* Government Logos */}
-              <div className="flex items-center gap-4 md:gap-6">
+              <div className="flex items-center justify-center gap-3 sm:gap-4 md:gap-6 flex-wrap xl:flex-nowrap">
                 <img
-                  src="https://www.nationalanticorruptioncommission.com/uploads/1653988613_9322e574621420038bfb.png"
-                  alt="Government of India Logo"
-                  className="h-12 md:h-16 w-auto object-contain"
+                  src="https://upload.wikimedia.org/wikipedia/en/4/4e/UGC_India_Logo.png"
+                  alt="UGC India Logo"
+                  className="h-10 sm:h-12 md:h-16 w-auto object-contain"
                 />
                 <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1tDlNLfrJwJRaAw8Norcm_VSuHuZob-yNDQ&s"
-                  alt="Ministry of Education Logo"
-                  className="h-12 md:h-16 w-auto object-contain"
+                  src="https://www.gvsu.edu/cms4/asset/83FCF959-CAC9-6F16-437BAC0D302BE992/eac-rgb-w-l[1464096725].jpg"
+                  alt="EAC Logo"
+                  className="h-10 sm:h-12 md:h-16 w-auto object-contain"
                 />
                 <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-Hj_3Ynl_EE77y1LrSoy-1wtzjqYAdMU7Pw&s"
-                  alt="Additional Logo"
-                  className="h-12 md:h-16 w-auto object-contain"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Logo_of_the_Indian_Council_of_Agricultural_Research.svg/962px-Logo_of_the_Indian_Council_of_Agricultural_Research.svg.png"
+                  alt="ICAR Logo"
+                  className="h-10 sm:h-12 md:h-16 w-auto object-contain"
                 />
               </div>
 
-              <div className="text-center md:text-right">
+              <div className="text-center xl:text-right">
                 <div className="text-sm text-gray-500 mb-1">
                   Latest Rankings
                 </div>
@@ -175,20 +175,20 @@ const Ranking = () => {
           </div>
 
           {/* Rankings Grid */}
-          <div className="px-8 pb-8 lg:px-12 lg:pb-12">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6">
+          <div className="px-4 sm:px-8 pb-8 lg:px-12 lg:pb-12">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6">
               {rankings.map((item, index) => {
                 const IconComponent = item.icon;
                 return (
                   <div key={index} className="group relative">
-                    <div className="bg-gray-50 rounded-xl p-6 border-2 border-gray-200 hover:border-blue-400 transition-all duration-300 hover:shadow-lg hover:bg-white">
+                    <div className="bg-gray-50 rounded-xl p-3 sm:p-6 border-2 border-gray-200 hover:border-blue-400 transition-all duration-300 hover:shadow-lg hover:bg-white">
                       <div className="text-center">
                         <IconComponent
-                          className="text-3xl mb-3 mx-auto"
+                          className="text-2xl sm:text-3xl mb-2 sm:mb-3 mx-auto"
                           style={{ color: "var(--color-brand-blue)" }}
                         />
                         <div
-                          className="text-4xl lg:text-5xl font-medium mb-2"
+                          className="text-2xl sm:text-4xl lg:text-5xl font-medium mb-1 sm:mb-2"
                           style={{ color: "var(--color-brand-blue)" }}
                         >
                           {item.rank}
@@ -196,7 +196,7 @@ const Ranking = () => {
                         <div className="text-xs font-medium text-gray-500 mb-1 uppercase tracking-wide">
                           {item.type}
                         </div>
-                        <div className="text-sm font-semibold text-gray-900">
+                        <div className="text-xs sm:text-sm font-semibold text-gray-900">
                           {item.category}
                         </div>
                       </div>
@@ -223,31 +223,30 @@ const Ranking = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {accreditations.map((item) => (
               <div
                 key={item.id}
                 className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border overflow-hidden transform hover:scale-[1.02]"
               >
                 {/* Logo Section */}
-                <div className="p-8 bg-gradient-to-br from-gray-50 to-white border-b flex items-center justify-center min-h-[180px]">
+                <div className="aspect-video overflow-hidden bg-white p-4 flex items-center justify-center">
                   <img
                     src={item.logo}
                     alt={item.title}
-                    className="max-h-24 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
+                    className="max-h-full max-w-full object-contain group-hover:scale-105 transition-all duration-500"
                     onError={(e) => {
-                      e.target.style.display = "none";
-                      e.target.parentElement.innerHTML = `<div class="text-6xl font-black text-gray-400">${item.grade}</div>`;
+                      e.target.src = "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80";
                     }}
                   />
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <div className="p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-600 mb-4">
+                  <p className="text-xs sm:text-sm text-gray-600 mb-4">
                     {item.description}
                   </p>
 
@@ -283,15 +282,15 @@ const Ranking = () => {
         {/* Call to Action */}
         <div className="text-center">
           <button
-            className="group inline-flex items-center gap-4 px-12 py-5 text-white rounded-2xl text-xl font-semibold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
+            className="group inline-flex items-center gap-3 sm:gap-4 px-8 sm:px-12 py-4 sm:py-5 text-white rounded-2xl text-lg sm:text-xl font-semibold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
             style={{
               background:
                 "linear-gradient(135deg, var(--color-brand-orange) 0%, var(--color-brand-orange-dark) 100%)",
             }}
           >
-            <FaShieldAlt className="text-2xl" />
+            <FaShieldAlt className="text-xl sm:text-2xl" />
             <span>View Detailed Rankings Report</span>
-            <FaChevronRight className="text-lg group-hover:translate-x-1 transition-transform" />
+            <FaChevronRight className="text-base sm:text-lg group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
       </div>
