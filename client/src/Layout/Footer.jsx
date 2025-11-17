@@ -543,7 +543,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="text-center lg:text-right">
+            {/* <div className="text-center lg:text-right">
               <div className="text-gray-600 text-sm mb-2">
                 Website designed & developed by
               </div>
@@ -569,7 +569,7 @@ export default function Footer() {
                   />
                 </svg>
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Institution Recognition */}

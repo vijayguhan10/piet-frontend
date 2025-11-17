@@ -18,11 +18,11 @@ const Home = () => {
 
   // Video carousel data with YouTube embed URLs (High Quality)
   const videoSlides = [
-     {
-        id: 3,
-        videoUrl:
-          "https://www.youtube.com/embed/1LmBS0eeRv0?autoplay=1&mute=1&loop=1&playlist=1LmBS0eeRv0&controls=0&showinfo=0&rel=0&modestbranding=1&vq=hd1080",
-      },
+    {
+      id: 3,
+      videoUrl:
+        "https://www.youtube.com/embed/1LmBS0eeRv0?autoplay=1&mute=1&loop=1&playlist=1LmBS0eeRv0&controls=0&showinfo=0&rel=0&modestbranding=1&vq=hd1080",
+    },
     {
       id: 2,
       videoUrl:
@@ -179,7 +179,7 @@ const Home = () => {
 
       {/* Loading State */}
       {!isVideoReady && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}

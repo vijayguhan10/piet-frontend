@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { useInView as useIntersectionObserver } from "react-intersection-observer";
 import CountUp from "react-countup";
 import {
@@ -41,77 +40,6 @@ import {
   SiRaspberrypi,
 } from "react-icons/si";
 
-// Floating Animation Component
-const FloatingIcon = ({ icon: Icon, delay = 0, duration = 3 }) => {
-  return (
-    <motion.div
-      animate={{
-        y: [0, -20, 0],
-        rotate: [0, 5, -5, 0],
-      }}
-      transition={{
-        duration,
-        repeat: Infinity,
-        delay,
-        ease: "easeInOut",
-      }}
-      className="absolute opacity-20"
-    >
-      <Icon className="text-2xl" style={{ color: "var(--color-brand-blue)" }} />
-    </motion.div>
-  );
-};
-
-// Interactive Particle Background
-const ParticleBackground = () => {
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const particles = Array.from({ length: 50 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.5,
-      vy: (Math.random() - 0.5) * 0.5,
-      size: Math.random() * 3 + 1,
-    }));
-
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "rgba(59, 130, 246, 0.1)";
-
-      particles.forEach((particle) => {
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-
-        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
-
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fill();
-      });
-
-      requestAnimationFrame(animate);
-    };
-
-    animate();
-  }, []);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      className="absolute inset-0 pointer-events-none"
-      style={{ zIndex: 0 }}
-    />
-  );
-};
-
 // Animated Counter Component
 const AnimatedCounter = ({ end, suffix = "", prefix = "", duration = 2 }) => {
   const [ref, inView] = useIntersectionObserver({
@@ -135,33 +63,14 @@ const AnimatedCounter = ({ end, suffix = "", prefix = "", duration = 2 }) => {
   );
 };
 
-// 3D Icon Animation Component
-const AnimatedIcon = ({ icon: Icon, color, delay = 0 }) => {
+// Static Icon Component
+const StaticIcon = ({ icon: Icon, color }) => {
   return (
-    <motion.div
-      initial={{ scale: 0, rotateY: -180 }}
-      animate={{ scale: 1, rotateY: 0 }}
-      transition={{
-        duration: 0.8,
-        delay,
-        type: "spring",
-        stiffness: 100,
-      }}
-      whileHover={{
-        scale: 1.1,
-        rotateY: 360,
-        transition: { duration: 0.6 },
-      }}
-      className="relative"
-    >
-      <div
-        className="absolute inset-0 blur-lg opacity-50 rounded-full"
-        style={{ backgroundColor: color }}
-      />
+    <div className="relative">
       <div className="relative bg-white rounded-full p-4 shadow-lg">
         <Icon className="text-2xl" style={{ color }} />
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -220,44 +129,19 @@ const InnovationShowcase = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
       {innovations.map((innovation, index) => (
-        <motion.div
+        <div
           key={innovation.id}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: index * 0.2 }}
-          viewport={{ once: true }}
           className="relative group"
         >
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="bg-white rounded-3xl p-8 shadow-xl border relative overflow-hidden"
-          >
-            {/* Animated Background Pattern */}
-            <div className="absolute inset-0 opacity-5">
-              {[...Array(20)].map((_, i) => (
-                <FloatingIcon
-                  key={i}
-                  icon={FaCircle}
-                  delay={i * 0.2}
-                  duration={4 + i * 0.1}
-                />
-              ))}
-            </div>
-
+          <div className="bg-white rounded-3xl p-8 shadow-xl border relative overflow-hidden">
             {/* Header */}
             <div className="relative z-10">
               <div className="flex items-center justify-between mb-6">
-                <AnimatedIcon
+                <StaticIcon
                   icon={innovation.icon}
                   color={innovation.color}
-                  delay={index * 0.1}
                 />
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.3 + index * 0.1 }}
-                  className="text-right"
-                >
+                <div className="text-right">
                   <div className="text-xs font-semibold text-gray-500 mb-1">
                     Status
                   </div>
@@ -270,39 +154,23 @@ const InnovationShowcase = () => {
                   >
                     {innovation.status}
                   </span>
-                </motion.div>
+                </div>
               </div>
 
               {/* Content */}
-              <motion.h3
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.4 + index * 0.1 }}
-                className="text-xl font-bold text-gray-900 mb-3"
-              >
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
                 {innovation.title}
-              </motion.h3>
+              </h3>
 
-              <motion.p
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.5 + index * 0.1 }}
-                className="text-gray-600 mb-6"
-              >
+              <p className="text-gray-600 mb-6">
                 {innovation.description}
-              </motion.p>
+              </p>
 
               {/* Technology Stack */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 + index * 0.1 }}
-                className="flex gap-3 mb-6"
-              >
+              <div className="flex gap-3 mb-6">
                 {innovation.technologies.map((Tech, techIndex) => (
-                  <motion.div
+                  <div
                     key={techIndex}
-                    whileHover={{ scale: 1.2, rotate: 360 }}
                     className="w-8 h-8 rounded-lg flex items-center justify-center"
                     style={{ backgroundColor: innovation.color + "15" }}
                   >
@@ -310,60 +178,42 @@ const InnovationShowcase = () => {
                       className="text-sm"
                       style={{ color: innovation.color }}
                     />
-                  </motion.div>
+                  </div>
                 ))}
-              </motion.div>
+              </div>
 
               {/* Metrics */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7 + index * 0.1 }}
-                className="grid grid-cols-3 gap-4 mb-6"
-              >
+              <div className="grid grid-cols-3 gap-4 mb-6">
                 {Object.entries(innovation.metrics).map(
-                  ([key, value], metricIndex) => (
+                  ([key, value]) => (
                     <div key={key} className="text-center">
-                      <motion.div
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        transition={{
-                          delay: 0.8 + index * 0.1 + metricIndex * 0.1,
-                          type: "spring",
-                          stiffness: 200,
-                        }}
+                      <div
                         className="text-lg font-bold"
                         style={{ color: innovation.color }}
                       >
                         {value}
-                      </motion.div>
+                      </div>
                       <div className="text-xs text-gray-500 capitalize">
                         {key}
                       </div>
                     </div>
                   )
                 )}
-              </motion.div>
+              </div>
 
               {/* Timeline */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.9 + index * 0.1 }}
-                className="flex items-center justify-between text-xs text-gray-500"
-              >
+              <div className="flex items-center justify-between text-xs text-gray-500">
                 <span>Timeline: {innovation.timeline}</span>
-                <motion.button
-                  whileHover={{ x: 5 }}
+                <button
                   className="flex items-center gap-1 font-semibold"
                   style={{ color: innovation.color }}
                 >
                   Explore <FaArrowRight />
-                </motion.button>
-              </motion.div>
+                </button>
+              </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       ))}
     </div>
   );
@@ -534,26 +384,11 @@ const Research = () => {
 
   return (
     <section className="bg-gray-50 py-16 lg:py-24 relative overflow-hidden">
-      <ParticleBackground />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Hero Section with Advanced Animations */}
+        {/* Hero Section */}
         <div className="text-center mb-16 relative">
-          {/* Floating Background Icons */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <FloatingIcon icon={FaBrain} delay={0} duration={4} />
-            <FloatingIcon icon={FaAtom} delay={1} duration={3.5} />
-            <FloatingIcon icon={FaRobot} delay={2} duration={4.5} />
-            {/* <FloatingIcon icon={RiSpaceLine} delay={0.5} duration={3} /> */}
-          </div>
-
           <div className="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-lg border mb-6 relative z-10">
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-            >
-              <HiSparkles style={{ color: "var(--color-brand-orange)" }} />
-            </motion.div>
+            <HiSparkles style={{ color: "var(--color-brand-orange)" }} />
             <span className="font-medium text-gray-700 text-sm tracking-wide">
               NEXT-GENERATION RESEARCH
             </span>
@@ -572,74 +407,50 @@ const Research = () => {
             future
           </p>
 
-          {/* Interactive CTA Buttons */}
+          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.button
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 20px 40px rgba(0,0,0,0.2)",
-              }}
-              whileTap={{ scale: 0.95 }}
+            <button
               className="inline-flex items-center gap-3 px-8 py-4 text-white rounded-xl font-semibold shadow-lg relative overflow-hidden"
               style={{
                 background:
                   "linear-gradient(135deg, var(--color-brand-blue) 0%, var(--color-brand-blue-dark) 100%)",
               }}
             >
-              <motion.div
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-              >
-                <FaPlay />
-              </motion.div>
+              <FaPlay />
               <span>Experience VR Lab Tour</span>
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            </button>
+            <button
               className="inline-flex items-center gap-3 px-8 py-4 border-2 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
               style={{
                 borderColor: "var(--color-brand-orange)",
                 color: "var(--color-brand-orange)",
               }}
             >
-              <motion.div
-                animate={{ y: [0, -3, 0] }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <FaDownload />
-              </motion.div>
+              <FaDownload />
               <span>Download Research Portfolio</span>
-            </motion.button>
+            </button>
           </div>
         </div>
 
-        {/* Enhanced Stats Section */}
+        {/* Stats Section */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {stats.map((stat, index) => (
-            <motion.div
+            <div
               key={index}
-              whileHover={{ y: -10, scale: 1.05 }}
               className="bg-white rounded-3xl p-6 text-center shadow-xl border relative overflow-hidden group"
             >
-              {/* Animated Background */}
+              {/* Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-orange-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <motion.div
+              <div
                 className="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center relative z-10"
                 style={{
                   background:
                     "linear-gradient(135deg, var(--color-brand-blue) 0%, var(--color-brand-blue-light) 100%)",
                 }}
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.8 }}
               >
                 <stat.icon className="text-2xl text-white" />
-              </motion.div>
+              </div>
 
               <div className="text-3xl font-bold text-gray-900 mb-1 relative z-10">
                 <AnimatedCounter
@@ -655,7 +466,7 @@ const Research = () => {
               <div className="text-xs text-gray-600 relative z-10">
                 {stat.description}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
@@ -673,26 +484,24 @@ const Research = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {researchAreas.map((area, index) => (
-              <motion.div
+              <div
                 key={area.id}
-                whileHover={{ scale: 1.02 }}
                 className="group bg-white rounded-3xl overflow-hidden shadow-xl border relative"
               >
-                {/* Animated Gradient Background */}
-                <motion.div
+                {/* Gradient Background */}
+                <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500"
                   style={{
                     background: `linear-gradient(135deg, ${area.color} 0%, ${area.color}80 100%)`,
                   }}
                 />
 
-                {/* Header with 3D Icon */}
+                {/* Header */}
                 <div className="relative p-8 pb-4">
                   <div className="flex items-start justify-between mb-6">
-                    <AnimatedIcon
+                    <StaticIcon
                       icon={area.icon}
                       color={area.color}
-                      delay={index * 0.1}
                     />
                     <div className="text-right">
                       <div
@@ -716,9 +525,8 @@ const Research = () => {
                   {/* Technology Icons */}
                   <div className="flex gap-3 mb-4">
                     {area.technologies.map((Tech, techIndex) => (
-                      <motion.div
+                      <div
                         key={techIndex}
-                        whileHover={{ scale: 1.2, rotate: 360 }}
                         className="w-10 h-10 rounded-xl flex items-center justify-center shadow-md"
                         style={{ backgroundColor: area.color + "15" }}
                       >
@@ -726,16 +534,15 @@ const Research = () => {
                           className="text-lg"
                           style={{ color: area.color }}
                         />
-                      </motion.div>
+                      </div>
                     ))}
                   </div>
 
                   {/* Keywords */}
                   <div className="flex flex-wrap gap-2 mb-6">
                     {area.keywords.map((keyword, keywordIndex) => (
-                      <motion.span
+                      <span
                         key={keywordIndex}
-                        whileHover={{ scale: 1.1 }}
                         className="px-3 py-1 text-xs rounded-full border"
                         style={{
                           borderColor: area.color + "40",
@@ -744,21 +551,19 @@ const Research = () => {
                         }}
                       >
                         {keyword}
-                      </motion.span>
+                      </span>
                     ))}
                   </div>
 
-                  <motion.button
-                    whileHover={{ x: 5 }}
+                  <button
                     className="inline-flex items-center gap-2 text-sm font-semibold transition-all"
                     style={{ color: area.color }}
                   >
                     <span>Explore Laboratory</span>
                     <FaArrowRight />
-                  </motion.button>
+                  </button>
                 </div>
-              </motion.div>
-            ))}
+              </div>))}
           </div>
         </div>
 
@@ -776,20 +581,8 @@ const Research = () => {
           <InnovationShowcase />
         </div>
 
-        {/* Interactive Research Collaboration Hub */}
+        {/* Research Collaboration Hub */}
         <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-2xl border relative overflow-hidden">
-          {/* Animated Background Pattern */}
-          <div className="absolute inset-0 overflow-hidden">
-            {[...Array(15)].map((_, i) => (
-              <FloatingIcon
-                key={i}
-                icon={i % 3 === 0 ? FaAtom : i % 3 === 1 ? FaBrain : FaRobot}
-                delay={i * 0.3}
-                duration={3 + i * 0.2}
-              />
-            ))}
-          </div>
-
           <div className="text-center mb-8 relative z-10">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Join the Innovation Ecosystem
@@ -839,15 +632,13 @@ const Research = () => {
                 ],
               },
             ].map((item, index) => (
-              <motion.div
+              <div
                 key={index}
-                whileHover={{ y: -5, scale: 1.02 }}
                 className="text-center group"
               >
-                <AnimatedIcon
+                <StaticIcon
                   icon={item.icon}
                   color={item.color}
-                  delay={index * 0.2}
                 />
                 <h3 className="font-bold text-gray-900 mb-2 mt-4">
                   {item.title}
@@ -856,9 +647,8 @@ const Research = () => {
 
                 <div className="space-y-2">
                   {item.features.map((feature, featureIndex) => (
-                    <motion.div
+                    <div
                       key={featureIndex}
-                      whileHover={{ x: 5 }}
                       className="text-xs text-gray-500 flex items-center justify-center gap-2"
                     >
                       <div
@@ -866,34 +656,24 @@ const Research = () => {
                         style={{ backgroundColor: item.color }}
                       />
                       <span>{feature}</span>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
           <div className="text-center mt-8 relative z-10">
-            <motion.button
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 20px 40px rgba(0,0,0,0.2)",
-              }}
-              whileTap={{ scale: 0.95 }}
+            <button
               className="inline-flex items-center gap-3 px-10 py-4 text-white rounded-xl font-semibold shadow-xl relative overflow-hidden"
               style={{
                 background:
                   "linear-gradient(135deg, var(--color-brand-orange) 0%, var(--color-brand-orange-dark) 100%)",
               }}
             >
-              <motion.div
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-              >
-                <FaExternalLinkAlt />
-              </motion.div>
+              <FaExternalLinkAlt />
               <span>Join Innovation Network</span>
-            </motion.button>
+            </button>
           </div>
         </div>
       </div>
