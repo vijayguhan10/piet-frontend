@@ -98,94 +98,94 @@ const Courses = () => {
       color: "from-emerald-500 to-green-600",
       stats: { programs: 12, students: "1200+" },
     },
-    {
-      id: 8,
-      title: "Agriculture Sciences",
-      icon: FaSeedling,
-      description: "Sustainable farming and agri-tech innovation",
-      courses: ["B.Sc Agri", "M.Sc Agri", "Horticulture"],
-      image:
-        "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&q=80",
-      color: "from-lime-500 to-green-600",
-      stats: { programs: 7, students: "500+" },
-    },
-    {
-      id: 9,
-      title: "Pharmacy",
-      icon: FaPrescriptionBottle,
-      description: "Pharmaceutical sciences and drug development",
-      courses: ["B.Pharm", "M.Pharm", "Pharm.D"],
-      image:
-        "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800&q=80",
-      color: "from-indigo-500 to-blue-600",
-      stats: { programs: 6, students: "700+" },
-    },
-    {
-      id: 10,
-      title: "Nursing",
-      icon: FaUserNurse,
-      description: "Compassionate care and clinical excellence",
-      courses: ["B.Sc Nursing", "M.Sc Nursing", "Post Basic"],
-      image:
-        "https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=800&q=80",
-      color: "from-rose-500 to-red-600",
-      stats: { programs: 5, students: "900+" },
-    },
-    {
-      id: 11,
-      title: "Public Health",
-      icon: FaShieldAlt,
-      description: "Community health and epidemiology",
-      courses: ["MPH", "DPH", "Certificate"],
-      image:
-        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
-      color: "from-sky-500 to-blue-600",
-      stats: { programs: 4, students: "300+" },
-    },
-    {
-      id: 12,
-      title: "Physiotherapy",
-      icon: FaWalking,
-      description: "Rehabilitation and movement sciences",
-      courses: ["BPT", "MPT", "Diploma"],
-      image:
-        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80",
-      color: "from-orange-500 to-red-600",
-      stats: { programs: 4, students: "350+" },
-    },
-    {
-      id: 13,
-      title: "Occupational Therapy",
-      icon: FaHandsHelping,
-      description: "Enabling independence through therapy",
-      courses: ["BOT", "MOT", "Advanced Cert"],
-      image:
-        "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80",
-      color: "from-fuchsia-500 to-purple-600",
-      stats: { programs: 3, students: "250+" },
-    },
-    {
-      id: 14,
-      title: "Online Education",
-      icon: FaLaptop,
-      description: "Flexible learning for working professionals",
-      courses: ["Online Degrees", "Certifications", "Short Courses"],
-      image:
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
-      color: "from-cyan-500 to-blue-600",
-      stats: { programs: 20, students: "3000+" },
-    },
-    {
-      id: 15,
-      title: "Distance Education",
-      icon: FaBook,
-      description: "Learn at your own pace, anywhere",
-      courses: ["Distance BA", "Distance MBA", "PG Diploma"],
-      image:
-        "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&q=80",
-      color: "from-violet-500 to-purple-600",
-      stats: { programs: 18, students: "2500+" },
-    },
+    // {
+    //   id: 8,
+    //   title: "Agriculture Sciences",
+    //   icon: FaSeedling,
+    //   description: "Sustainable farming and agri-tech innovation",
+    //   courses: ["B.Sc Agri", "M.Sc Agri", "Horticulture"],
+    //   image:
+    //     "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&q=80",
+    //   color: "from-lime-500 to-green-600",
+    //   stats: { programs: 7, students: "500+" },
+    // },
+    // {
+    //   id: 9,
+    //   title: "Pharmacy",
+    //   icon: FaPrescriptionBottle,
+    //   description: "Pharmaceutical sciences and drug development",
+    //   courses: ["B.Pharm", "M.Pharm", "Pharm.D"],
+    //   image:
+    //     "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800&q=80",
+    //   color: "from-indigo-500 to-blue-600",
+    //   stats: { programs: 6, students: "700+" },
+    // },
+    // {
+    //   id: 10,
+    //   title: "Nursing",
+    //   icon: FaUserNurse,
+    //   description: "Compassionate care and clinical excellence",
+    //   courses: ["B.Sc Nursing", "M.Sc Nursing", "Post Basic"],
+    //   image:
+    //     "https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=800&q=80",
+    //   color: "from-rose-500 to-red-600",
+    //   stats: { programs: 5, students: "900+" },
+    // },
+    // {
+    //   id: 11,
+    //   title: "Public Health",
+    //   icon: FaShieldAlt,
+    //   description: "Community health and epidemiology",
+    //   courses: ["MPH", "DPH", "Certificate"],
+    //   image:
+    //     "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
+    //   color: "from-sky-500 to-blue-600",
+    //   stats: { programs: 4, students: "300+" },
+    // },
+    // {
+    //   id: 12,
+    //   title: "Physiotherapy",
+    //   icon: FaWalking,
+    //   description: "Rehabilitation and movement sciences",
+    //   courses: ["BPT", "MPT", "Diploma"],
+    //   image:
+    //     "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80",
+    //   color: "from-orange-500 to-red-600",
+    //   stats: { programs: 4, students: "350+" },
+    // },
+    // {
+    //   id: 13,
+    //   title: "Occupational Therapy",
+    //   icon: FaHandsHelping,
+    //   description: "Enabling independence through therapy",
+    //   courses: ["BOT", "MOT", "Advanced Cert"],
+    //   image:
+    //     "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80",
+    //   color: "from-fuchsia-500 to-purple-600",
+    //   stats: { programs: 3, students: "250+" },
+    // },
+    // {
+    //   id: 14,
+    //   title: "Online Education",
+    //   icon: FaLaptop,
+    //   description: "Flexible learning for working professionals",
+    //   courses: ["Online Degrees", "Certifications", "Short Courses"],
+    //   image:
+    //     "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
+    //   color: "from-cyan-500 to-blue-600",
+    //   stats: { programs: 20, students: "3000+" },
+    // },
+    // {
+    //   id: 15,
+    //   title: "Distance Education",
+    //   icon: FaBook,
+    //   description: "Learn at your own pace, anywhere",
+    //   courses: ["Distance BA", "Distance MBA", "PG Diploma"],
+    //   image:
+    //     "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&q=80",
+    //   color: "from-violet-500 to-purple-600",
+    //   stats: { programs: 18, students: "2500+" },
+    // },
   ];
 
   const ProgramCard = ({ program, index }) => {
