@@ -46,7 +46,7 @@ const Ranking = () => {
   const accreditations = [
     {
       id: 1,
-      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/NAAC_LOGO.svg/1200px-NAAC_LOGO.svg.png",
+      logo: "https://naac.gov.in/images/docs/What-we-do/NAAC-logo.jpg",
       title: "NAAC A++ Grade",
       description: "National Assessment and Accreditation Council",
       grade: "A++",
@@ -62,7 +62,7 @@ const Ranking = () => {
     },
     {
       id: 3,
-      logo: "https://www.ietjournals.org/images/IET-logo.png",
+      logo: "https://www.theiet.org/media/5182/iet-logo-blue-rgb.jpg",
       title: "IET Membership",
       description: "Institution of Engineering and Technology",
       grade: "Member",
@@ -78,7 +78,7 @@ const Ranking = () => {
     },
     {
       id: 5,
-      logo: "https://www.nbaindia.org/uploaded/images/logo.png",
+      logo: "https://www.nbaind.org/Files/NBA-LOGO.png",
       title: "NBA Accreditation",
       description: "National Board of Accreditation",
       grade: "Accredited",
@@ -184,19 +184,19 @@ const Ranking = () => {
                     <div className="bg-gray-50 rounded-xl p-3 sm:p-6 border-2 border-gray-200 hover:border-blue-400 transition-all duration-300 hover:shadow-lg hover:bg-white">
                       <div className="text-center">
                         <IconComponent
-                          className="text-2xl sm:text-3xl mb-2 sm:mb-3 mx-auto"
+                          className="text-xl sm:text-2xl lg:text-3xl mb-2 sm:mb-3 mx-auto"
                           style={{ color: "var(--color-brand-blue)" }}
                         />
                         <div
-                          className="text-2xl sm:text-4xl lg:text-5xl font-medium mb-1 sm:mb-2"
+                          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium mb-1 sm:mb-2"
                           style={{ color: "var(--color-brand-blue)" }}
                         >
                           {item.rank}
                         </div>
-                        <div className="text-xs font-medium text-gray-500 mb-1 uppercase tracking-wide">
+                        <div className="text-[10px] sm:text-xs font-medium text-gray-500 mb-1 uppercase tracking-wide">
                           {item.type}
                         </div>
-                        <div className="text-xs sm:text-sm font-semibold text-gray-900">
+                        <div className="text-xs sm:text-sm lg:text-base font-semibold text-gray-900">
                           {item.category}
                         </div>
                       </div>
@@ -214,10 +214,10 @@ const Ranking = () => {
         {/* Accreditations */}
         <div className="mb-16">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Accreditations & Recognitions
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
               Validated by premier national and international accreditation
               bodies
             </p>
@@ -236,31 +236,47 @@ const Ranking = () => {
                     alt={item.title}
                     className="max-h-full max-w-full object-contain group-hover:scale-105 transition-all duration-500"
                     onError={(e) => {
-                      e.target.src = "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80";
+                      e.target.src =
+                        "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80";
                     }}
                   />
                 </div>
 
                 {/* Content */}
-                <div className="p-4 sm:p-6">
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                <div className="p-3 sm:p-4 lg:p-6">
+                  <h3 className="text-sm sm:text-lg lg:text-xl font-semibold text-gray-900 mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-gray-600 mb-4">
+                  <p className="text-[10px] sm:text-xs lg:text-sm text-gray-600 mb-3 sm:mb-4 leading-relaxed">
                     {item.description}
                   </p>
 
-                  <div className="flex items-center justify-between">
-                    <span
-                      className="inline-block px-3 py-1 text-xs font-semibold rounded-full"
-                      style={{
-                        backgroundColor: "var(--color-brand-blue)",
-                        color: "white",
-                      }}
-                    >
-                      {item.grade}
-                    </span>
-                    <span className="text-xs text-gray-500">
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-2">
+                      <div
+                        className="w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center"
+                        style={{ backgroundColor: "var(--color-brand-blue)" }}
+                      >
+                        <span className="text-[8px] text-xs font-bold text-white">
+                          {item.grade === "A++"
+                            ? "A++"
+                            : item.grade === "Approved"
+                            ? "✓"
+                            : item.grade === "Member"
+                            ? "M"
+                            : item.grade === "Accredited"
+                            ? "✓"
+                            : "R"}
+                        </span>
+                      </div>
+                      <span
+                        className="text-[10px] sm:text-xs lg:text-sm font-semibold"
+                        style={{ color: "var(--color-brand-blue)" }}
+                      >
+                        {item.grade}
+                      </span>
+                    </div>
+                    <span className="text-[10px] sm:text-xs text-gray-500">
                       {item.validity}
                     </span>
                   </div>

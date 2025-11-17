@@ -7,6 +7,7 @@ import BasicsInstitution from "./home/About";
 import Courses from "./home/Courses";
 import Ranking from "./home/Ranking";
 import Facilities from "./home/Facilities";
+import Research from "./home/Research";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -18,6 +19,7 @@ function App() {
       <Courses />
       <Ranking />
       <Facilities />
+      <Research />
       <Footer />
     </div>
   );
