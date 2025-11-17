@@ -20,7 +20,6 @@ import {
 } from "react-icons/fa";
 
 const Courses = () => {
-
   const programs = [
     {
       id: 1,
@@ -195,7 +194,9 @@ const Courses = () => {
     return (
       <div className="group relative h-full">
         {/* Gradient Border Wrapper */}
-        <div className={`relative h-full rounded-2xl bg-gradient-to-r ${program.color} p-[2px] transition-all duration-300`}>
+        <div
+          className={`relative h-full rounded-2xl bg-gradient-to-r ${program.color} p-[2px] transition-all duration-300`}
+        >
           {/* Main Card */}
           <div className="relative h-full bg-white rounded-2xl overflow-hidden shadow-xl transition-all duration-300 group-hover:shadow-2xl">
             {/* Image Section */}
@@ -208,44 +209,44 @@ const Courses = () => {
 
               {/* Floating Icon */}
               <div className="absolute top-4 right-4 w-14 h-14 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg flex items-center justify-center">
-              <Icon
-                className="text-2xl"
-                style={{ color: "var(--color-brand-orange)" }}
-              />
-            </div>
+                <Icon
+                  className="text-2xl"
+                  style={{ color: "var(--color-brand-orange)" }}
+                />
+              </div>
 
-            {/* Stats Badge */}
-            <div className="absolute bottom-4 left-4 right-4 flex gap-2">
-              <div className="flex-1 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg">
-                <div className="text-xs text-slate-600 font-medium">
-                  Programs
+              {/* Stats Badge */}
+              <div className="absolute bottom-4 left-4 right-4 flex gap-2">
+                <div className="flex-1 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg">
+                  <div className="text-xs text-slate-600 font-medium">
+                    Programs
+                  </div>
+                  <div className="text-lg font-bold text-slate-900">
+                    {program.stats.programs}
+                  </div>
                 </div>
-                <div className="text-lg font-bold text-slate-900">
-                  {program.stats.programs}
+                <div className="flex-1 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg">
+                  <div className="text-xs text-slate-600 font-medium">
+                    Students
+                  </div>
+                  <div className="text-lg font-bold text-slate-900">
+                    {program.stats.students}
+                  </div>
                 </div>
               </div>
-              <div className="flex-1 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg">
-                <div className="text-xs text-slate-600 font-medium">
-                  Students
-                </div>
-                <div className="text-lg font-bold text-slate-900">
-                  {program.stats.students}
-                </div>
-              </div>
             </div>
-          </div>
 
-          {/* Content Section */}
-          <div className="p-6 space-y-4">
+            {/* Content Section */}
+            <div className="p-6 space-y-4">
               {/* Title */}
               <h3 className="text-2xl font-bold text-slate-900">
-              {program.title}
-            </h3>
+                {program.title}
+              </h3>
 
-            {/* Description */}
-            <p className="text-slate-600 text-sm leading-relaxed">
-              {program.description}
-            </p>
+              {/* Description */}
+              <p className="text-slate-600 text-sm leading-relaxed">
+                {program.description}
+              </p>
 
               {/* Courses Pills */}
               <div className="flex flex-wrap gap-2">
@@ -254,28 +255,31 @@ const Courses = () => {
                     key={idx}
                     className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-full border border-slate-200"
                   >
-                  {course}
-                </span>
-              ))}
-            </div>
+                    {course}
+                  </span>
+                ))}
+              </div>
 
               {/* CTA Button */}
               <button
                 className="w-full flex items-center justify-between px-5 py-3 text-white rounded-xl font-semibold text-sm shadow-md"
-                style={{ background: 'linear-gradient(to right, var(--color-brand-orange), var(--color-brand-orange-dark))' }}
+                style={{
+                  background:
+                    "linear-gradient(to right, var(--color-brand-orange), var(--color-brand-orange-dark))",
+                }}
               >
                 <span>Explore Program</span>
                 <FaArrowRight />
               </button>
 
-            {/* Rating Stars */}
-            <div className="flex items-center justify-center gap-1 pt-2 border-t border-slate-100">
-              {[...Array(5)].map((_, i) => (
-                <FaStar key={i} className="text-yellow-400 text-sm" />
-              ))}
-              <span className="ml-2 text-xs text-slate-600 font-medium">
-                4.8/5.0
-              </span>
+              {/* Rating Stars */}
+              <div className="flex items-center justify-center gap-1 pt-2 border-t border-slate-100">
+                {[...Array(5)].map((_, i) => (
+                  <FaStar key={i} className="text-yellow-400 text-sm" />
+                ))}
+                <span className="ml-2 text-xs text-slate-600 font-medium">
+                  4.8/5.0
+                </span>
               </div>
             </div>
           </div>
