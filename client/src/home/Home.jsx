@@ -19,19 +19,9 @@ const Home = () => {
   // Video carousel data with YouTube embed URLs (High Quality)
   const videoSlides = [
     {
-      id: 3,
+      id: 1,
       videoUrl:
-        "https://www.youtube.com/embed/1LmBS0eeRv0?autoplay=1&mute=1&loop=1&playlist=1LmBS0eeRv0&controls=0&showinfo=0&rel=0&modestbranding=1&vq=hd1080",
-    },
-    {
-      id: 2,
-      videoUrl:
-        "https://www.youtube.com/embed/1u37AU9Ycrc?autoplay=1&mute=1&loop=1&playlist=1u37AU9Ycrc&controls=0&showinfo=0&rel=0&modestbranding=1&vq=hd1080",
-    },
-    {
-      id: 3,
-      videoUrl:
-        "https://www.youtube.com/embed/1LmBS0eeRv0?autoplay=1&mute=1&loop=1&playlist=1LmBS0eeRv0&controls=0&showinfo=0&rel=0&modestbranding=1&vq=hd1080",
+        "https://www.youtube.com/embed/AXsJMQ4uaJE?autoplay=1&mute=1&loop=1&playlist=AXsJMQ4uaJE&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&vq=hd1080",
     },
   ];
 
@@ -41,7 +31,7 @@ const Home = () => {
 
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % videoSlides.length);
-    }, 100000); // Change slide every 100 seconds
+    }, 30000); // Change slide every 30 seconds
 
     return () => clearInterval(timer);
   }, [isPlaying, videoSlides.length]);
@@ -78,7 +68,7 @@ const Home = () => {
         >
           {/* YouTube Video Embed */}
           <iframe
-            className="absolute top-0 left-0 w-full h-full pointer-events-none"
+            className="absolute top-0 left-0 w-full h-full"
             style={{
               width: "100vw",
               height: "56.25vw",
@@ -92,8 +82,9 @@ const Home = () => {
             src={videoSlides[currentSlide].videoUrl}
             title="PIE Tech Video"
             frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
+            referrerPolicy="strict-origin-when-cross-origin"
           ></iframe>
         </motion.div>
       </AnimatePresence>
