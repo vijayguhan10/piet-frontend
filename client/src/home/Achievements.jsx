@@ -9,27 +9,48 @@ import {
 } from "react-icons/fa";
 
 // Import achievement images from college folder
+import img1 from "/src/assets/college/Annual-Day-768x432.webp";
+import img2 from "/src/assets/college/Gameathon-768x432.webp";
+import img3 from "/src/assets/college/Ideathon-2025-1-768x432.webp";
+import img4 from "/src/assets/college/Quest-Ingenium-March-2025-1-768x432.webp";
+import img5 from "/src/assets/college/Workshop-on-Business-Model-Canvas-768x432.webp";
+import img6 from "/src/assets/college/Github-and-Linkedin-for-Career-Advancement-768x432.webp";
+import img7 from "/src/assets/college/Digital-Marketing-768x432.jpg.jpeg";
+import img8 from "/src/assets/college/Women-Entrepreneurship-Development-Programme-768x432.jpg.jpeg";
+import img9 from "/src/assets/college/Event-in-celebration-of-Mathematics-and-Statistics-Awareness-Month-768x432.webp";
+import img10 from "/src/assets/college/Workshop-on-Bug-Bounty-Pen-Testing-Uncovering-Vulnerabilities-like-a-Pro-768x432.webp";
+import img11 from "/src/assets/college/lifestyle-awareness-program-768x432.webp";
+import img12 from "/src/assets/college/Walk-Share-Motivate-768x432.webp";
+import img13 from "/src/assets/college/Nextgen-C-Innovation-throgh-STL-Concurrency-Beyond-768x432.webp";
+import img14 from "/src/assets/college/Codelee-768x432.webp";
+import img15 from "/src/assets/college/POSTER-17-copy-768x432.jpg.jpeg";
+import img16 from "/src/assets/college/POSTER-20-TV-ACHIEVEMENT-copy-768x432.jpg.jpeg";
+import img17 from "/src/assets/college/POSTER-37-TV-SIH-copy-768x432.jpg.jpeg";
+import img18 from "/src/assets/college/POSTER-43-B-ANIMATE-copy-768x432.jpg.jpeg";
+import img19 from "/src/assets/college/World-Earth-Day-1024x1024.webp";
+import img20 from "/src/assets/college/The-International-Day-of-Forests-1024x1024.webp";
+
 const achievementImages = [
-  "/src/assets/college/Annual-Day-768x432.webp",
-  "/src/assets/college/Gameathon-768x432.webp",
-  "/src/assets/college/Ideathon-2025-1-768x432.webp",
-  "/src/assets/college/Quest-Ingenium-March-2025-1-768x432.webp",
-  "/src/assets/college/Workshop-on-Business-Model-Canvas-768x432.webp",
-  "/src/assets/college/Github-and-Linkedin-for-Career-Advancement-768x432.webp",
-  "/src/assets/college/Digital-Marketing-768x432.jpg.jpeg",
-  "/src/assets/college/Women-Entrepreneurship-Development-Programme-768x432.jpg.jpeg",
-  "/src/assets/college/Event-in-celebration-of-Mathematics-and-Statistics-Awareness-Month-768x432.webp",
-  "/src/assets/college/Workshop-on-Bug-Bounty-Pen-Testing-Uncovering-Vulnerabilities-like-a-Pro-768x432.webp",
-  "/src/assets/college/lifestyle-awareness-program-768x432.webp",
-  "/src/assets/college/Walk-Share-Motivate-768x432.webp",
-  "/src/assets/college/Nextgen-C-Innovation-throgh-STL-Concurrency-Beyond-768x432.webp",
-  "/src/assets/college/Codelee-768x432.webp",
-  "/src/assets/college/POSTER-17-copy-768x432.jpg.jpeg",
-  "/src/assets/college/POSTER-20-TV-ACHIEVEMENT-copy-768x432.jpg.jpeg",
-  "/src/assets/college/POSTER-37-TV-SIH-copy-768x432.jpg.jpeg",
-  "/src/assets/college/POSTER-43-B-ANIMATE-copy-768x432.jpg.jpeg",
-  "/src/assets/college/World-Earth-Day-1024x1024.webp",
-  "/src/assets/college/The-International-Day-of-Forests-1024x1024.webp",
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img7,
+  img8,
+  img9,
+  img10,
+  img11,
+  img12,
+  img13,
+  img14,
+  img15,
+  img16,
+  img17,
+  img18,
+  img19,
+  img20,
 ];
 
 const Achievements = () => {
@@ -51,7 +72,7 @@ const Achievements = () => {
       title: "Annual Academic Excellence Awards",
       description:
         "Recognizing outstanding academic performance across all departments",
-      image: "/src/assets/college/Annual-Day-768x432.webp",
+      image: img1,
       stats: { participants: "500+", awards: "50" },
     },
     {
@@ -60,7 +81,7 @@ const Achievements = () => {
       title: "Ideathon 2025 - Innovation Challenge",
       description:
         "Students showcase groundbreaking ideas and innovative solutions",
-      image: "/src/assets/college/Ideathon-2025-1-768x432.webp",
+      image: img3,
       stats: { participants: "200+", projects: "75" },
     },
     {
@@ -68,7 +89,7 @@ const Achievements = () => {
       category: "competitions",
       title: "Gameathon - Gaming & Development",
       description: "Premier gaming and game development competition",
-      image: "/src/assets/college/Gameathon-768x432.webp",
+      image: img2,
       stats: { participants: "150+", teams: "30" },
     },
     {
@@ -76,7 +97,7 @@ const Achievements = () => {
       category: "innovation",
       title: "Quest Ingenium Research Symposium",
       description: "Cutting-edge research presentations and innovations",
-      image: "/src/assets/college/Quest-Ingenium-March-2025-1-768x432.webp",
+      image: img4,
       stats: { researchers: "100+", papers: "40" },
     },
     {
@@ -84,8 +105,7 @@ const Achievements = () => {
       category: "community",
       title: "Women Entrepreneurship Development",
       description: "Empowering women through entrepreneurship programs",
-      image:
-        "/src/assets/college/Women-Entrepreneurship-Development-Programme-768x432.jpg.jpeg",
+      image: img8,
       stats: { participants: "80+", startups: "12" },
     },
     {
@@ -93,8 +113,7 @@ const Achievements = () => {
       category: "academic",
       title: "Career Advancement Workshop",
       description: "GitHub and LinkedIn mastery for professional growth",
-      image:
-        "/src/assets/college/Github-and-Linkedin-for-Career-Advancement-768x432.webp",
+      image: img6,
       stats: { attendees: "300+", placements: "45" },
     },
   ];
