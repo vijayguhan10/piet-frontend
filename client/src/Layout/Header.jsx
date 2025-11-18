@@ -125,13 +125,7 @@ const Header = () => {
                     className={`text-xs font-medium transition-colors duration-200 ${
                       link.highlight
                         ? "text-red-600 hover:text-red-700 font-semibold"
-                        : "text-gray-700"
-                    }
-                    style={{
-                      '--hover-color': 'var(--color-brand-blue)'
-                    }}
-                    onMouseEnter={(e) => !quickLinks.find(l => l.highlight) && (e.currentTarget.style.color = 'var(--color-brand-blue)')}
-                    onMouseLeave={(e) => !quickLinks.find(l => l.highlight) && (e.currentTarget.style.color = '')}
+                        : "text-gray-700 hover:text-blue-600"
                     }`}
                   >
                     {link.label}
@@ -198,7 +192,11 @@ const Header = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="flex items-center gap-2 px-3 py-1.5 text-white rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap ml-2"
-                style={{ backgroundColor: "var(--color-brand-orange)" }}
+                style={{
+                  backgroundColor: "var(--color-brand-orange)",
+                  textShadow:
+                    "0 1px 3px rgba(0,0,0,0.3), 0 2px 6px rgba(0,0,0,0.2)",
+                }}
                 onMouseEnter={(e) =>
                   (e.currentTarget.style.backgroundColor =
                     "var(--color-brand-orange-dark)")
@@ -207,10 +205,6 @@ const Header = () => {
                   (e.currentTarget.style.backgroundColor =
                     "var(--color-brand-orange)")
                 }
-                style={{
-                  textShadow:
-                    "0 1px 3px rgba(0,0,0,0.3), 0 2px 6px rgba(0,0,0,0.2)",
-                }}
                 aria-label="Admission Contact"
               >
                 <FaCalendarPlus className="text-base shrink-0" />
@@ -227,7 +221,11 @@ const Header = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="flex items-center gap-2 px-3 py-1.5 text-white rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap"
-                style={{ backgroundColor: "var(--color-brand-blue)" }}
+                style={{
+                  backgroundColor: "var(--color-brand-blue)",
+                  textShadow:
+                    "0 1px 3px rgba(0,0,0,0.3), 0 2px 6px rgba(0,0,0,0.2)",
+                }}
                 onMouseEnter={(e) =>
                   (e.currentTarget.style.backgroundColor =
                     "var(--color-brand-blue-dark)")
@@ -236,10 +234,6 @@ const Header = () => {
                   (e.currentTarget.style.backgroundColor =
                     "var(--color-brand-blue)")
                 }
-                style={{
-                  textShadow:
-                    "0 1px 3px rgba(0,0,0,0.3), 0 2px 6px rgba(0,0,0,0.2)",
-                }}
                 aria-label="Counseling"
               >
                 <FaAmbulance className="text-base shrink-0" />
