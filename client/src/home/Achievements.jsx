@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { useState } from "react";
 import {
   FaTrophy,
@@ -6,7 +5,6 @@ import {
   FaGraduationCap,
   FaLightbulb,
   FaUsers,
-  FaChevronLeft,
   FaChevronRight,
 } from "react-icons/fa";
 
@@ -128,13 +126,7 @@ const Achievements = () => {
 
       {/* Header Section */}
       <div className="relative max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 pt-16 pb-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-50 to-orange-50 px-6 py-3 rounded-full border border-amber-200/50 shadow-sm mb-8">
             <FaTrophy className="text-amber-600 text-lg" />
@@ -156,16 +148,10 @@ const Achievements = () => {
             that define our institution's commitment to academic and
             professional success.
           </p>
-        </motion.div>
+        </div>
 
         {/* Category Filter */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3 mb-16"
-        >
+        <div className="flex flex-wrap justify-center gap-3 mb-16">
           {achievementCategories.map((category, index) => {
             const IconComponent = category.icon;
             return (
@@ -189,23 +175,15 @@ const Achievements = () => {
               </button>
             );
           })}
-        </motion.div>
+        </div>
       </div>
 
       {/* Achievements Grid */}
       <div className="relative max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 pb-20">
-        <motion.div
-          layout
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {filteredAchievements.map((achievement, index) => (
-            <motion.div
+            <div
               key={achievement.id}
-              layout
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
             >
               {/* Image */}
@@ -269,18 +247,12 @@ const Achievements = () => {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Achievement Gallery Collage */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-20"
-        >
+        <div className="mt-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
               Gallery of
@@ -297,12 +269,8 @@ const Achievements = () => {
           {/* Masonry Grid */}
           <div className="columns-2 lg:columns-3 xl:columns-4 gap-2 sm:gap-4 space-y-2 sm:space-y-4">
             {achievementImages.map((image, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="break-inside-avoid group cursor-pointer relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
                 onClick={() => openImageModal(image)}
               >
@@ -322,25 +290,19 @@ const Achievements = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Image Modal */}
       {selectedImage && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
           onClick={closeImageModal}
         >
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8, opacity: 0 }}
+          <div
             className="relative max-w-4xl max-h-[90vh] w-full bg-white rounded-2xl overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
@@ -355,19 +317,13 @@ const Achievements = () => {
               alt="Achievement Detail"
               className="w-full h-full object-contain"
             />
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       )}
 
       {/* Call to Action */}
       <div className="relative max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative bg-white border border-slate-200/50 rounded-3xl p-12 text-start shadow-lg hover:shadow-xl transition-shadow duration-500 overflow-hidden"
-        >
+        <div className="relative bg-white border border-slate-200/50 rounded-3xl p-12 text-center shadow-lg hover:shadow-xl transition-shadow duration-500 overflow-hidden">
           {/* Subtle background pattern */}
           <div className="absolute inset-0 opacity-[0.02]">
             <div
@@ -388,13 +344,13 @@ const Achievements = () => {
             Be part of our journey towards greater achievements and academic
             excellence. Your success story starts here.
           </p>
-          <button className=" text-nowrap right-6 relative bg-slate-900 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 overflow-hidden">
+          <button className="group text-nowrap right-6 relative bg-slate-900 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 overflow-hidden">
             <span className="relative z-10">Explore Opportunities</span>
             <FaChevronRight className="relative z-10 inline ml-2 group-hover:translate-x-1 transition-transform" />
             {/* Subtle hover effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-slate-800 to-slate-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
