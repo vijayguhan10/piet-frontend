@@ -342,7 +342,7 @@ const Achievements = () => {
 
       {/* Call to Action */}
       <div className="relative max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 py-16">
-        <div className="relative bg-white border border-slate-200/50 rounded-3xl p-12 text-center shadow-lg hover:shadow-xl transition-shadow duration-500 overflow-hidden">
+        <div className="relative bg-white border border-slate-200/50 rounded-3xl p-12 text-start shadow-lg hover:shadow-xl transition-shadow duration-500 overflow-hidden">
           {/* Subtle background pattern */}
           <div className="absolute inset-0 opacity-[0.02]">
             <div
