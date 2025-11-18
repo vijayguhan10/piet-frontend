@@ -7,16 +7,14 @@ const Home = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isVideoReady, setIsVideoReady] = useState(false);
 
-  // Set video ready after initial load timeout
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVideoReady(true);
-    }, 2000); // 2 seconds timeout for initial load
+    }, 2000); 
 
     return () => clearTimeout(timer);
   }, []);
 
-  // Video carousel data with YouTube embed URLs (High Quality)
   const videoSlides = [
     {
       id: 1,
@@ -25,13 +23,12 @@ const Home = () => {
     },
   ];
 
-  // Auto-play carousel
   useEffect(() => {
     if (!isPlaying) return;
 
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % videoSlides.length);
-    }, 30000); // Change slide every 30 seconds
+    }, 30000); 
 
     return () => clearInterval(timer);
   }, [isPlaying, videoSlides.length]);
@@ -40,23 +37,10 @@ const Home = () => {
     setCurrentSlide(index);
   };
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % videoSlides.length);
-  };
 
-  const prevSlide = () => {
-    setCurrentSlide(
-      (prev) => (prev - 1 + videoSlides.length) % videoSlides.length
-    );
-  };
-
-  const togglePlayPause = () => {
-    setIsPlaying(!isPlaying);
-  };
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black max-w-screen">
-      {/* Video Carousel */}
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
@@ -81,7 +65,6 @@ const Home = () => {
             }}
             src={videoSlides[currentSlide].videoUrl}
             title="PIE Tech Video"
-            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
             referrerPolicy="strict-origin-when-cross-origin"
