@@ -46,7 +46,7 @@ const Ranking = () => {
   const accreditations = [
     {
       id: 1,
-      logo: "https://naac.gov.in/images/docs/What-we-do/NAAC-logo.jpg",
+      logo: "https://upload.wikimedia.org/wikipedia/en/1/1d/NAAC_LOGO.png",
       title: "NAAC A++ Grade",
       description: "National Assessment and Accreditation Council",
       grade: "A++",
@@ -62,7 +62,7 @@ const Ranking = () => {
     },
     {
       id: 3,
-      logo: "https://www.theiet.org/media/5182/iet-logo-blue-rgb.jpg",
+      logo: "https://media.licdn.com/dms/image/v2/D4E22AQH55CbKVFJGww/feedshare-shrink_800/B4EZR1Z2wgHAAk-/0/1737136500357?e=2147483647&v=beta&t=q0zU5bgqTHHaRKPlGo6Tzl0lEzWdYf6pYptTYwEPmIU",
       title: "IET Membership",
       description: "Institution of Engineering and Technology",
       grade: "Member",
@@ -78,7 +78,7 @@ const Ranking = () => {
     },
     {
       id: 5,
-      logo: "https://www.nbaind.org/Files/NBA-LOGO.png",
+      logo: "https://www.abesit.in/wp-content/uploads/2025/05/nba-300x300-1.jpg",
       title: "NBA Accreditation",
       description: "National Board of Accreditation",
       grade: "Accredited",
