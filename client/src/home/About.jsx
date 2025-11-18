@@ -262,7 +262,7 @@ const BasicsInstitution = () => {
                 <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
                   <div className="aspect-[4/3]">
                     <img
-                      src="https://images.unsplash.com/photo-1562774053-701939374585?w=1200&h=900&fit=crop"
+                      src="https://www.pietech.edu.in/images/slider/slide-1.png"
                       alt="PIE Tech Campus"
                       className="w-full h-full object-cover"
                     />
