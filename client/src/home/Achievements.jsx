@@ -8,51 +8,6 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 
-// Import achievement images from college folder
-import img1 from "/src/assets/college/Annual-Day-768x432.webp";
-import img2 from "/src/assets/college/Gameathon-768x432.webp";
-import img3 from "/src/assets/college/Ideathon-2025-1-768x432.webp";
-import img4 from "/src/assets/college/Quest-Ingenium-March-2025-1-768x432.webp";
-import img5 from "/src/assets/college/Workshop-on-Business-Model-Canvas-768x432.webp";
-import img6 from "/src/assets/college/Github-and-Linkedin-for-Career-Advancement-768x432.webp";
-import img7 from "/src/assets/college/Digital-Marketing-768x432.jpg.jpeg";
-import img8 from "/src/assets/college/Women-Entrepreneurship-Development-Programme-768x432.jpg.jpeg";
-import img9 from "/src/assets/college/Event-in-celebration-of-Mathematics-and-Statistics-Awareness-Month-768x432.webp";
-import img10 from "/src/assets/college/Workshop-on-Bug-Bounty-Pen-Testing-Uncovering-Vulnerabilities-like-a-Pro-768x432.webp";
-import img11 from "/src/assets/college/lifestyle-awareness-program-768x432.webp";
-import img12 from "/src/assets/college/Walk-Share-Motivate-768x432.webp";
-import img13 from "/src/assets/college/Nextgen-C-Innovation-throgh-STL-Concurrency-Beyond-768x432.webp";
-import img14 from "/src/assets/college/Codelee-768x432.webp";
-import img15 from "/src/assets/college/POSTER-17-copy-768x432.jpg.jpeg";
-import img16 from "/src/assets/college/POSTER-20-TV-ACHIEVEMENT-copy-768x432.jpg.jpeg";
-import img17 from "/src/assets/college/POSTER-37-TV-SIH-copy-768x432.jpg.jpeg";
-import img18 from "/src/assets/college/POSTER-43-B-ANIMATE-copy-768x432.jpg.jpeg";
-import img19 from "/src/assets/college/World-Earth-Day-1024x1024.webp";
-import img20 from "/src/assets/college/The-International-Day-of-Forests-1024x1024.webp";
-
-const achievementImages = [
-  img1,
-  img2,
-  img3,
-  img4,
-  img5,
-  img6,
-  img7,
-  img8,
-  img9,
-  img10,
-  img11,
-  img12,
-  img13,
-  img14,
-  img15,
-  img16,
-  img17,
-  img18,
-  img19,
-  img20,
-];
-
 const Achievements = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedImage, setSelectedImage] = useState(null);
@@ -68,53 +23,168 @@ const Achievements = () => {
   const achievementData = [
     {
       id: 1,
-      category: "academic",
-      title: "Annual Academic Excellence Awards",
-      description:
-        "Recognizing outstanding academic performance across all departments",
-      image: img1,
-      stats: { participants: "500+", awards: "50" },
+      category: "academics",
+      title: "Scholastic Excellence Awards",
+      description: "Celebrating top-performing students across all programs",
+      image:
+        "https://i.pinimg.com/originals/7d/60/29/7d6029cfc040929fc84eb9bf90a92133.jpg",
+      stats: { participants: "500+", awards: "60" },
     },
     {
       id: 2,
       category: "innovation",
-      title: "Ideathon 2025 - Innovation Challenge",
-      description:
-        "Students showcase groundbreaking ideas and innovative solutions",
-      image: img3,
-      stats: { participants: "200+", projects: "75" },
+      title: "Campus Innovation Expo",
+      description: "Showcasing creative projects and groundbreaking solutions",
+      image:
+        "https://i.pinimg.com/originals/84/73/80/847380a8e4afb3ca81825deb72493983.jpg",
+      stats: { participants: "250+", projects: "90" },
     },
     {
       id: 3,
       category: "competitions",
-      title: "Gameathon - Gaming & Development",
-      description: "Premier gaming and game development competition",
-      image: img2,
-      stats: { participants: "150+", teams: "30" },
+      title: "Hackathon Championship",
+      description:
+        "24-hour coding challenge featuring advanced problem solving",
+      image:
+        "https://i.pinimg.com/originals/ec/78/6b/ec786b8da8084128d5cd7d14599a3513.jpg",
+      stats: { participants: "180+", teams: "40" },
     },
     {
       id: 4,
-      category: "innovation",
-      title: "Quest Ingenium Research Symposium",
-      description: "Cutting-edge research presentations and innovations",
-      image: img4,
-      stats: { researchers: "100+", papers: "40" },
+      category: "research",
+      title: "Annual Research Symposium",
+      description: "Presentations of modern research and technical papers",
+      image:
+        "https://i.pinimg.com/originals/bd/2a/7b/bd2a7b46e7d89abad67ac58b6adb9042.jpg",
+      stats: { researchers: "120+", papers: "50" },
     },
     {
       id: 5,
       category: "community",
-      title: "Women Entrepreneurship Development",
-      description: "Empowering women through entrepreneurship programs",
-      image: img8,
-      stats: { participants: "80+", startups: "12" },
+      title: "Women Entrepreneurship Drive",
+      description: "Programs empowering young women entrepreneurs",
+      image:
+        "https://i.pinimg.com/originals/a5/f8/37/a5f837f6159f4580bc1d6cfe9e21af84.jpg",
+      stats: { participants: "90+", startups: "15" },
     },
     {
       id: 6,
+      category: "careers",
+      title: "Career Development Workshop",
+      description: "Training on resume building, LinkedIn, and GitHub",
+      image:
+        "https://i.pinimg.com/originals/04/58/35/045835bfb845894158f0d270e8368226.jpg",
+      stats: { attendees: "350+", offers: "50" },
+    },
+    {
+      id: 7,
+      category: "sports",
+      title: "Annual Sports Meet",
+      description: "A celebration of athletic skills and team spirit",
+      image:
+        "https://i.pinimg.com/originals/e6/91/b0/e691b04cf3c1bc205bcd50428e2aca4a.png",
+      stats: { participants: "600+", events: "25" },
+    },
+    {
+      id: 8,
+      category: "technology",
+      title: "Tech Expo Showcase",
+      description:
+        "Exhibitions of electronics, robotics, and software projects",
+      image:
+        "https://i.pinimg.com/originals/38/4d/be/384dbe43493317fed5b95a4d0486a388.jpg",
+      stats: { projects: "80+", teams: "30" },
+    },
+    {
+      id: 9,
+      category: "culture",
+      title: "Cultural Fest - Arts & Talent Night",
+      description: "A vibrant display of cultural performances and arts",
+      image:
+        "https://i.pinimg.com/originals/cc/c5/cd/ccc5cd8b3a877d152aac2535cf60e948.jpg",
+      stats: { participants: "700+", performances: "50+" },
+    },
+    {
+      id: 10,
+      category: "studentlife",
+      title: "Campus Life Gallery",
+      description: "Moments capturing vibrant student experiences",
+      image:
+        "https://i.pinimg.com/originals/78/b1/7a/78b17ac34ffc8485b457a4a55bbffb88.jpg",
+      stats: { photos: "300+", memories: "infinite" },
+    },
+    
+    {
+      id: 17,
+      category: "competitions",
+      title: "International Robotics Challenge",
+      description: "Advanced robotics competitions and demonstrations",
+      image:
+        "https://i.pinimg.com/originals/57/30/4d/57304d21cdf050b23058dc1bd494d918.jpg",
+      stats: { teams: "50+", countries: "12" },
+    },
+    {
+      id: 18,
       category: "academic",
-      title: "Career Advancement Workshop",
-      description: "GitHub and LinkedIn mastery for professional growth",
-      image: img6,
-      stats: { attendees: "300+", placements: "45" },
+      title: "Graduate Research Conference",
+      description: "Postgraduate research presentations and networking",
+      image:
+        "https://i.pinimg.com/originals/90/a3/05/90a30557ad4f0f03cef9fe86695a22ab.png",
+      stats: { researchers: "120+", papers: "60" },
+    },
+    {
+      id: 19,
+      category: "community",
+      title: "Digital Literacy Campaign",
+      description: "Technology education for underserved communities",
+      image:
+        "https://i.pinimg.com/originals/13/61/84/1361848376ca18f82f90c37378769ca2.png",
+      stats: { beneficiaries: "1000+", centers: "15" },
+    },
+    {
+      id: 20,
+      category: "innovation",
+      title: "AI & Machine Learning Summit",
+      description: "Artificial intelligence research and applications",
+      image:
+        "https://i.pinimg.com/originals/f7/5c/da/f75cda048abdffa82a38d9a3c4b5a7da.jpg",
+      stats: { attendees: "400+", demos: "30" },
+    },
+    {
+      id: 21,
+      category: "competitions",
+      title: "Design Thinking Challenge",
+      description: "Creative problem-solving and design competitions",
+      image:
+        "https://i.pinimg.com/originals/80/35/73/803573cc224fdcd3c61762b3728bb4d2.jpg",
+      stats: { participants: "180+", solutions: "45" },
+    },
+    {
+      id: 22,
+      category: "academic",
+      title: "International Exchange Program",
+      description: "Global academic partnerships and student mobility",
+      image:
+        "https://i.pinimg.com/originals/38/2f/b4/382fb4ba36cda57575b801b4eb5f3f21.png",
+      stats: { students: "75+", universities: "20" },
+    },
+    {
+      id: 23,
+      category: "innovation",
+      title: "Green Technology Initiative",
+      description: "Sustainable technology development and implementation",
+      image:
+        "https://i.pinimg.com/originals/97/f0/ac/97f0ac1795c3d73c284afef582c284ff.jpg",
+      stats: { projects: "35+", savings: "40%" },
+    },
+    {
+      id: 24,
+      category: "community",
+      title: "Youth Leadership Program",
+      description: "Developing next-generation leaders and changemakers",
+      image:
+        "https://i.pinimg.com/originals/e0/a6/7b/e0a67b6a70abaefcf2b6f4de7b715023.jpg",
+      stats: { leaders: "200+", initiatives: "50" },
     },
   ];
 
@@ -286,26 +356,28 @@ const Achievements = () => {
           </div>
 
           {/* Masonry Grid */}
-          <div className="columns-2 lg:columns-3 xl:columns-4 gap-2 sm:gap-4 space-y-2 sm:space-y-4">
-            {achievementImages.map((image, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6">
+            {achievementData.map((achievement, index) => (
               <div
-                key={index}
-                className="break-inside-avoid group cursor-pointer relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
-                onClick={() => openImageModal(image)}
+                key={achievement.id}
+                className="group cursor-pointer relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                onClick={() => openImageModal(achievement.image)}
               >
-                <img
-                  src={image}
-                  alt={`Achievement ${index + 1}`}
-                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-xl p-3">
-                    <div className="text-sm font-semibold text-slate-800">
-                      Achievement Gallery #{index + 1}
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={achievement.image}
+                    alt={achievement.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-xl p-3">
+                    <div className="text-sm font-bold text-slate-900 mb-1">
+                      {achievement.title}
                     </div>
-                    <div className="text-xs text-slate-600">
-                      Click to view details
+                    <div className="text-xs text-slate-600 capitalize">
+                      {achievement.category}
                     </div>
                   </div>
                 </div>
