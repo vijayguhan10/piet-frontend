@@ -471,6 +471,16 @@ const BasicsInstitution = () => {
               .carousel .control-arrow:hover::before {
                 border-color: white !important;
               }
+              /* Disable scroll-based slide changes */
+              .carousel .slider {
+                touch-action: pan-y !important;
+              }
+              .carousel .carousel {
+                pointer-events: auto !important;
+              }
+              .carousel-root .carousel {
+                overflow: visible !important;
+              }
             `}</style>
 
             <Carousel
@@ -483,6 +493,11 @@ const BasicsInstitution = () => {
               selectedItem={selectedSlide}
               onChange={(index) => setSelectedSlide(index)}
               className="carousel-root"
+              swipeable={false}
+              emulateTouch={false}
+              useKeyboardArrows={false}
+              preventMovementUntilSwipeScrollTolerance={true}
+              swipeScrollTolerance={50}
             >
               {lifeAtPietImages.map((item, index) => (
                 <div key={item.id} className="px-2 sm:px-4">
